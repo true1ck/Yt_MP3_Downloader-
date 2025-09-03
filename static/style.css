@@ -1,0 +1,217 @@
+:root {
+    --grad-1: #667eea;
+    --grad-2: #764ba2;
+  }
+  * {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .app-shell {
+    width: 100%;
+    max-width: 960px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+  }
+  [data-bs-theme="dark"] .app-shell {
+    background: rgba(24, 24, 28, 0.85);
+  }
+  .app-header {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    padding: 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(118, 75, 162, 0.4);
+  }
+  .brand h1 {
+    font-size: 1.125rem;
+    margin: 0;
+    font-weight: 700;
+  }
+  .brand p {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.8;
+  }
+  .app-main {
+    padding: 24px;
+  }
+  .input-card {
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  .input-card .card-header {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  [data-bs-theme="dark"] .input-card .card-header {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+  }
+  .cta-btn {
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 700;
+    box-shadow: 0 10px 18px rgba(102, 126, 234, 0.35);
+    background-image: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+    border: none;
+  }
+  .cta-btn:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.35);
+  }
+  .muted {
+    opacity: 0.8;
+  }
+
+  /* Queue list */
+  .queue-item {
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .queue-item.current {
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.25);
+    transform: translateY(-2px);
+  }
+  .queue-thumb {
+    width: 72px;
+    height: 40px;
+    border-radius: 10px;
+    background: #e9ecef;
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  .queue-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .queue-title {
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .queue-meta {
+    font-size: 0.825rem;
+    opacity: 0.85;
+  }
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .status-Queued {
+    background: #e9ecef;
+  }
+  .status-Downloading {
+    background: #cfe2ff;
+  }
+  .status-Converting {
+    background: #fff3cd;
+  }
+  .status-Completed {
+    background: #d1e7dd;
+  }
+  .status-Failed {
+    background: #f8d7da;
+  }
+  .progress {
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.08);
+  }
+  .progress .progress-bar {
+    transition: width 0.25s ease;
+  }
+
+  /* Drag & drop */
+  .dropzone {
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .dropzone.dragover {
+    border-color: var(--grad-1);
+    background: rgba(102, 126, 234, 0.08);
+  }
+
+  /* History */
+  .history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+  }
+  .history-item:last-child {
+    border-bottom: 0;
+  }
+  /* Add this to the end of your style.css file */
+
+.progress-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    color: #6c757d;
+  }
+
+  [data-bs-theme="dark"] .progress-details {
+    color: #adb5bd;
+  }
+  /* Dark mode tweaks */
+  [data-bs-theme="dark"] .queue-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  [data-bs-theme="dark"] .dropzone {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  [data-bs-theme="dark"] .status-Queued { background-color: #343a40; }
+  [data-bs-theme="dark"] .status-Downloading { background-color: #084298; }
+  [data-bs-theme="dark"] .status-Converting { background-color: #664d03; }
+  [data-bs-theme="dark"] .status-Completed { background-color: #0f5132; }
+  [data-bs-theme="dark"] .status-Failed { background-color: #842029; }
